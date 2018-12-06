@@ -5,12 +5,14 @@
   "main": "main.js",
   "scripts": {
     "start": "node main.js ./data/clips.csv",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./tests/vimeo.test.js"
   },
   "author": "Eakrum Awwal",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^5.0.1"
+    "mocha": "^5.0.1",
+    "mocha-sinon": "^2.1.0",
+    "sinon": "^4.3.0"
   }
 }

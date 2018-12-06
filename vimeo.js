@@ -6,15 +6,17 @@ function writeFile(fileName, filteredData) {
     if (err) throw err;
   });
 }
-/*** FUNCTION THAT CHECKS IF VIDEOS ARE VALID OR INVALID ***/
-function videoValid(videoData) {
-  const validated = {}; //object that will have key value pair of video id and valid or invalid videos. i.e {200111: "valid"}
 
-  //validate all of the data received from the CSV file based on requirements outlined by the problem given
-  videoData.reduce((acc, rowString) => {
+/****************************************************************************************************************************** 
+ *                                FUNCTION THAT CHECKS IF VIDEOS ARE VALID OR INVALID 
+ I used an object because it can account for repeated video id's,  because each video_id is a "key" it will just reassign!
+ *
+ ****************************************************************************************************************************/
+function videoValid(videoData) {
+  return videoData.reduce((acc, rowString) => {
     const row = rowString.split(",");
 
-    //if clause that will check for validity (valid), if valid object key value pair will be assigned
+    //if clause that will check for validity (valid), if valid, object key value pair will be assigned
     if (
       row[1].length < 30 &&
       row[2] === "anybody" &&
@@ -22,22 +24,20 @@ function videoValid(videoData) {
       parseInt(row[5]) > 10
     ) {
       const validValue = parseInt(row[0]);
-      validated[validValue] = "valid";
+      acc[validValue] = "valid";
 
-      //else clause that will check for validity (invalid), if invalid object key value pair will be assigned
+      //else clause that will check for validity (invalid), if invalid, object key value pair will be assigned
     } else {
       const invalidValue = parseInt(row[0]);
-      validated[invalidValue] = "invalid";
+      acc[invalidValue] = "invalid";
     }
-  }, []);
-
-  //returns the object of key value pairs indicating if valid or invalid
-  return validated;
+    return acc; //this is the object that contains all key value pairs of ID's and appropriate validity tag i.e { "200088": "invalid" }
+  }, {});
 }
 
 /**************************************************************************************************************************
 *                                          MAIN VALIDATOR FUNCTION
-This function calls the "videoValid" and "writeFile" helper functions to verify and append files. Although this function combination 
+This function calls the "videoValid" helper function to validate all videos. Although this function combination 
 goes through an extra pass, it has an added functionality of returning an object of two arrays, one of invalid videos and one 
 of valid videos. Doing so can add more features or data manipulation and is easily available to use at anybody else's discretion.
 *
@@ -56,12 +56,7 @@ function validator(csvData) {
     }
   });
 
-  //write the respective files with data stored
-  writeFile("./data/invalid.csv", invalid);
-  writeFile("./data/valid.csv", valid);
-
-  //I didn't need to do this part but figured it would be a nice added feature for future functionality and
-  //to just see some quick totals in the console.
+  //return an object that cointains all the valid and invalid video id's!
   return {
     valid: valid,
     invalid: invalid
