@@ -59,7 +59,7 @@ The function then returns these arrays to be called later in `main.js` where it 
 
 ### Issues
 
-Due to other responsibilites such as coursework, finals, and needing to complete challenges for two other teams at Vimeo there are some slight issues that I know of, but do not necessarily have time to resolve.
+Due to other responsibilites such as coursework, and finals there are some slight issues that I know of, but do not necessarily have time to resolve.
 
 1. One issue is checking & identifying if the the CSV file follows
    the appropriate format as shown by clips.csv.
@@ -70,7 +70,7 @@ Due to other responsibilites such as coursework, finals, and needing to complete
 
 ### Remarks
 
-I am extremely passionate about this opportunity and Vimeo as a company. I have spent quite some time following Vimeo for potential openings to join given my background in video streaming and live video and would be extremely grateful if given the opportunity to proceed to the next steps in the interview process. Given the circumstances, I have been waiting for a potential opening that can be beneficial to both parties and hoping that this can put me one step closer to helping Vimeo excel and bringing me closer to obtaining this opportunity. My sincere apologies if this comes off as strong worded, I am just passionate about this position, opportunity and would like to relay that message to you. Hope to hear back! 
+I am extremely passionate about this opportunity and Vimeo as a company. I have spent quite some time following Vimeo for potential openings to join given my background in video streaming and live video and would be extremely grateful if given the opportunity to proceed to the next steps in the interview process. Given the circumstances, I have been waiting for a potential opening that can be beneficial to both parties and hoping that this can put me one step closer to helping Vimeo excel and bringing me closer to obtaining this opportunity. My sincere apologies if this comes off as strong worded, I am just passionate about this position, opportunity and would like to relay that message to you. Hope to hear back!
 
 - Regards,
-Eakrum Awwal
+  Eakrum Awwal
